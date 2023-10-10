@@ -3,6 +3,7 @@
  
 var oracledb = require("oracledb");
 var dbConfig = require("./dbConfig.js");
+var conn;
  
 oracledb.autoCommit = true; //자동 커밋
  
@@ -11,12 +12,12 @@ oracledb.getConnection({
 	password:dbConfig.password,
 	connectString:dbConfig.connectString
 	},
-	function(err,conn) {
+	function(err,con) {
 		
 		if(err) {throw err;}
 		
 		console.log("Oracle DB 연결 성공!!");
-		
+		var conn = con;
 		var sql;
 		
 		//create
