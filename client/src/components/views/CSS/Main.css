@@ -1,0 +1,34 @@
+.home_div {
+    width:100%;
+    height: 570px;
+    display: flex;
+    background-image: linear-gradient(to bottom, aqua, #fff);
+    position: sticky;
+    z-index: 100;
+}
+
+.home_button {
+    width: 120px;
+    margin-top: 325px;
+    display: flex;
+    flex-direction: column;
+}
+
+.home_main_text{
+    margin-top: 70px;
+    width: 150px;
+    margin-left: 70px;
+    display: flex;
+}
+
+.home_image {
+    margin: auto;
+    object-fit: contain;
+}
+
+.home_surveDiv1 {
+    width:100%;
+    height: 1400px;
+    display: flex;
+    background-color:rgb(163, 237, 88);
+}

@@ -1,0 +1,55 @@
+.footer {
+    height: 150px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: ivory;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* footer 로고img & 설명 영역 */
+.footer_nav {
+    width: 100px;
+    display: flex;
+    margin-top: 20px;
+    margin-left: 50px;
+    margin-right: 20px;
+    flex-direction: column;
+    background-color: blue;
+}
+
+.footer_logo {
+    width: 50px;
+    object-fit: contain;
+    margin: auto;
+}
+
+/* footer 설명 영역 */
+.footer_option {
+    margin-top: 10px;
+    margin: 10px;
+}
+
+/* footer 아바타 영역 */
+.footer_nav2 {
+    display: flex;
+    height: 130px;
+    margin-top: 20px;
+    margin-left: 100px;
+}
+
+.footer_avatar {
+    height: 130px;
+    width: 80px;
+}
+
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+    src: local('Material Icons'),
+      local('MaterialIcons-Regular')
+}
