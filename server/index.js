@@ -8,6 +8,7 @@ const port = 5000
 var oracledb = require("oracledb");
 var dbConfig = require("../dbConfig");
 var conn;
+var qs = require('querystring');
  
 oracledb.autoCommit = true; //자동 커밋
  
@@ -21,8 +22,8 @@ oracledb.getConnection({
 		if(err) {throw err;}
 		
 		console.log("Oracle DB 연결 성공!!");
-        var conn = con;
-    });
+        conn = con;
+});
 
 app.get('/api/hello',(req,res) => {
     console.log("hihi");
@@ -35,21 +36,28 @@ app.get('/CarPage', (req,res) => {
 
 //클라이언트로부터 regist를 요청받으면
 app.post('/api/register',function(req, res){
-    console.log(req.body);
-    // //오라클에 접속해서 insert문을 실행한다. 
-    // var id = request.body.id;
-    // var password = request.body.password;
+    //오라클에 접속해서 insert문을 실행한다. 
+    let body = '';
+    let data = '';
+    req.on('data', function (data) {
+      body = body + data;
+    });
+    
+    req.on('end', function () {
+        data = JSON.parse(body);
 
-    //     //쿼리문 실행 
-    //     conn.execute("insert into user(id,password) values('"+id+"','"+password+"')",function(err,result){
-    //         if(err){
-    //             console.log("등록중 에러가 발생했어요!!", err);
-    //             doRelease();
-    //         }else{
-    //             console.log("result : ",result);
-    //         }
-    //     });
-    //     response.send('1');
+        //쿼리문 실행 
+        conn.execute("insert into USERINFO(id,password) values('"+data.id+"','"+data.password+"')",function(err,result){
+            if(err){
+                console.log("등록중 에러가 발생했어요!!", err);
+                doRelease();
+            }else{
+                console.log("result : ",result);
+            }
+        });
+        res.send('1');
+    });
+     
     });
 
 

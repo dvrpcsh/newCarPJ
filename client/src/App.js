@@ -15,6 +15,7 @@ import CarPage from './components/views/Page/CarPage';
 import Example from './components/views/Page/Example';
 import ReactEx from './example/ReactEx';
 import Register from './example/Register';
+
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {

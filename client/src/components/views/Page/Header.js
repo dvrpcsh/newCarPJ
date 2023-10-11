@@ -1,7 +1,11 @@
 import React from 'react'
 import '../CSS/Header.css'
-import { ShoppingBasket } from '@material-ui/icons';
+// import { ShoppingBasket } from '@material-ui/icons';
 import { Link } from "react-router-dom";
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
+import SvgIcon from "@mui/material/SvgIcon";
+import { SvgIconComponent } from "@mui/icons-material";
 
 function Header() {
     return (
@@ -42,6 +46,11 @@ function Header() {
                 <span class="material-icons">search</span>
                 <span class="material-icons">person</span>
                 <span class="material-icons">list</span>
+                {/* <Stack direction="row" spacing={2}>
+                    <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                    <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" />
+                    <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" />
+                 </Stack> */}
             </div>
 
         </div>

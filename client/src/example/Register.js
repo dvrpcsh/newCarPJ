@@ -19,7 +19,7 @@ function Regist(id,password) {
     if(response.data) {
       alert("회원가입 성공");
     } else {
-      alert("회원가입 실패")
+      alert("회원가입 실패");
     }
   })
 }
@@ -36,10 +36,12 @@ function Register(){
   // }, [])
 
   const OnChangeId = (event) => {
-    setId(event.currentTarget.value); 
+    setId(event.currentTarget.value);
+    console.log(id);
   };
   const OnChangePassword = (event) => {
     setPassword(event.currentTarget.value);
+    console.log(password);
   };
 
     return <article>
